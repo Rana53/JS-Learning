@@ -1,19 +1,19 @@
 {
-  "name": "restfulapi-shop",
-  "version": "1.0.0",
-  "description": "A node js shopping restfull api",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "node",
-    "restful",
-    "api"
-  ],
-  "author": "Rana53",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "restfulapi-shop",
+    "version": "1.0.0",
+    "description": "A node js shopping restfull api",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "node",
+        "restful",
+        "api"
+    ],
+    "author": "Rana53",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
 }
