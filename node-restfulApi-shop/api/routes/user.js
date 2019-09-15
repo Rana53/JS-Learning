@@ -38,7 +38,20 @@ router.post('/signup', (req, res, next) => {
   .catch(err =>{
     res.status(500).json({ error: err})
   });
-
+});
+router.delete('/:userId', (req, res, err)=>{
+  User.deleteOne({_id: req.params.userId})
+  .exec()
+  .then(result =>{
+      if(result.deletedCount > 0)
+          res.status(200).json({ message: "User deleted", result : result});
+      else
+          res.status(200).json({ message: "User data not found", result : result});
+  })
+  .catch(err =>{
+    console.log(err);
+    res.status(500).json({ error: err});
+  });
 });
 
 module.exports = router;
