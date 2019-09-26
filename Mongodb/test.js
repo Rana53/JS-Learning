@@ -24,11 +24,17 @@ const userSchema = new mongoose.Schema({
   }
 });
 const User = mongoose.model('User', userSchema);
+// const person1 = new User({
+//   socialMediaHandles:{
+//     github: 'Rana53',
+//     twitter: '@Rana_jahid'
+//   }
+// });
+
 const person1 = new User({
-  socialMediaHandles:{
-    github: 'Rana53',
-    twitter: '@Rana_jahid'
-  }
+  socialMediaHandles: {}
 });
+person1.socialMediaHandles.set('github', 'Rana53');
+person1.socialMediaHandles.set('twitter', '@Rana_jahid');
 
 console.log(person1.socialMediaHandles);
