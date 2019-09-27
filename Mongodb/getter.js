@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', {useUnifiedTopology: true, useNewUrlParser: true});
+setTimeout((err, res) => {
+  mongoose.connect('mongodb://localhost/test', {useUnifiedTopology: true useNewUrlParser: true});
+}, 6000);
 
 
 var db = mongoose.connection;
