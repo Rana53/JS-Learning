@@ -1,5 +1,5 @@
 var fs = require("fs");
-
+var outStr = "";
 fs.readFile("regular_file.txt",'utf-8', (err, data) => {
     if(err) throw err;
     compressData(data.toString());
@@ -8,7 +8,6 @@ fs.readFile("regular_file.txt",'utf-8', (err, data) => {
 function compressData(data){
     var inStr = data;
     console.log(inStr);
-    var outStr = "";
     for(var i = 0; i < inStr.length; i += count){
         var ch = inStr[i];
         var count = 1;
@@ -18,9 +17,14 @@ function compressData(data){
         }
         outStr += count.toString()+ch;
     }
-    console.log(outStr);
+    fs.writeFile("encrypted_file.txt",outStr,(err) => {
+        if(err) throw err;
+    });
 }
+var stats = fs.statSync("regular_file.txt");
+var regFileSize = stats["size"];
 
-fs.watchFile("encrypted_file.txt",outStr);
-// var regSize = fs.
-// var encSize = 
+var stats = fs.statSync("encrypted_file.txt");
+var encFileSize = stats["size"];
+
+console.log(regFileSize + " " + " " + encFileSize);
