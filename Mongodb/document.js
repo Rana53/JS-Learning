@@ -17,3 +17,16 @@ await p.validate();
 let p2 = new Person({ name: 'foo', age: -1 });
 // Path `age` (-1) is less than minimum allowed value (0).
 await p2.validate();
+let p1 = new Person({ name: 'food ', age: -1});
+let p2 = new Person({ name: 'food', age: -2})
+#include<stdio.h>
+int main(){
+    int i, j;
+    for(int i = 0; i < n ; i++){
+        for(int j = 0; j < n; j++){
+
+        }
+    }
+
+  return 0;
+}
