@@ -1,6 +1,6 @@
 var fs = require("fs");
 var outStr = "";
-fs.readFile("regular_file.txt",'utf-8', (err, data) => {
+fs.readFile("rLEregular_file.txt",'utf-8', (err, data) => {
     if(err) throw err;
     compressData(data.toString());
 });
@@ -21,16 +21,16 @@ function compressData(data){
         outStr += count.toString()+ch;
     }
     console.log(outStr)
-    fs.writeFile("encrypted_file.txt",outStr,(err) => {
+    fs.writeFile("rLEencrypted_file.txt",outStr,(err) => {
         if(err) throw err;
     });
 }
 
-var stats = fs.statSync("regular_file.txt");
+var stats = fs.statSync("rLEregular_file.txt");
 var regFileSize = stats["size"];
 
 
-var stats = fs.statSync("encrypted_file.txt");
+var stats = fs.statSync("rLEencrypted_file.txt");
 var encFileSize = stats["size"];
 
 console.log("regular size " + regFileSize + " and  encripted size " + " " + encFileSize + ' (byte formate)');
