@@ -9,7 +9,7 @@ var con = mysql.createConnection({
 
 con.connect(err => {
   if(err) throw err;
-  con.query("SELECT * FROM customers ORDER BY name DESC", (err, result) => {
-  	console.log(result);
+  con.query("DELETE FROM customers WHERE address = 'Mountain 21'", (err, result) => {
+  	console.log(result.affectedRows + ' Row deleted');
   })
 });
