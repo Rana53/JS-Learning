@@ -7,10 +7,10 @@ var con = mysql.createConnection({
   database: "mydb"
 });
 
-con.connect(function(err) {
+var name = 'Ben';
+var addr =  'Mountain 21';
+var sql = 'SELECT * FROM customers WHERE name = ? OR address = ?';
+con.query(sql,[name,addr], function (err, result) {
   if (err) throw err;
-  con.query("SELECT * FROM customers WHERE address = 'Park Lane 38'", function (err, result) {
-    if (err) throw err;
-    console.log(result);
-  });
+  console.log(result);
 });
