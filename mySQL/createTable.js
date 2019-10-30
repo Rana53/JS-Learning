@@ -9,7 +9,7 @@ var con = mySql.createConnection({
 con.connect(err => {
 	if(err) console.log('error on connection');
 	console.log('Connected...');
-	var sql = "ALTER TABLE customers ( id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(255), address VARCHAR(255))";
+	var sql = "ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY";
 	con.query(sql, (err, result) => {
 		if(err) console.log("error on creating on tabel");
 		console.log("Tabel created , result " + result);
