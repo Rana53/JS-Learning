@@ -9,7 +9,9 @@ var con = mysql.createConnection({
 
 con.connect(err => {
   if(err) throw err;
-  con.query("DELETE FROM customers WHERE address = 'Mountain 21'", (err, result) => {
-  	console.log(result.affectedRows + ' Row deleted');
-  })
-});
+  var sql = "SELECT * FROM customers LIMIT 5 OFFSET 2";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
+})
