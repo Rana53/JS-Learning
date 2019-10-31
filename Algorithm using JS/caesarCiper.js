@@ -1,7 +1,7 @@
 var message = "Aa MessAG XyZ";
 var encMessage = '';
 var lg = console.log;
-
+// data encryption operation
 var encryption = (data, key) => {
   var value;
   for(let i = 0; i < data.length; i++){
